@@ -352,10 +352,8 @@ graph TB
 
 ## Architecture Compute / Stockage
 
-Diagramme détaillé : voir la section [#architecture-compute--stockage](#architecture-compute--stockage)
 Cette section complète la vue réseau en détaillant l’exécution des workloads et la
 protection des données.
-Les stratégies de sauvegarde sont également listées dans la section [#inventaire-du-lab](#inventaire-du-lab).
 
 ```mermaid
 graph TB
@@ -951,7 +949,7 @@ graph LR
 
 ## Progression hebdomadaire
 
-La progression détaillée du lab, semaine par semaine, est accessible à la section [#progression-hebdomadaire](#progression-hebdomadaire).
+La progression détaillée du lab, semaine par semaine
 
 Chaque étape réfère aux composantes décrites dans :
 
@@ -991,9 +989,9 @@ Chaque étape réfère aux composantes décrites dans :
 
 ## Inventaire du lab
 
-Inventaire complet des hôtes, machines virtuelles et services : [#inventaire-du-lab](#inventaire-du-lab)
+Inventaire complet des hôtes, machines virtuelles et services.
 
-Cet inventaire sert de référence transversale pour :
+Cet inventaire sert de référence pour :
 
 * la feuille de route hebdomadaire
 * les diagrammes d’architecture
