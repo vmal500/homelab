@@ -956,35 +956,34 @@ Chaque étape réfère aux composantes décrites dans :
 * [#inventaire-du-lab](#inventaire-du-lab)
 * Les diagrammes d’architecture
 
-| Semaine        | Statut        | Description |
-|---------------|--------------|-------------|
-| **Semaine 1** | Terminé      | Mise en place de l’infrastructure de base et d’un réseau fonctionnel. Définition du socle sur lequel tout le reste repose. |
-| **Semaine 2** | Terminé      | Introduction d’une identité centralisée. Passage d’un environnement isolé à une gestion structurée des accès. |
-| **Semaine 3** | Terminé      | Déploiement des premiers services partagés pour les utilisateurs. Transition vers un environnement orienté services. |
-| **Semaine 4** | Terminé      | Mise en place des premières pratiques de supervision et de sauvegarde. Début de la responsabilité opérationnelle. |
-| **Semaine 5** | Terminé      | Extension du périmètre vers un site distant. Introduction des opérations multi-sites et de la coordination réseau. |
-| **Semaine 6** | Terminé      | Renforcement de la résilience des services d’identité. Validation de la continuité des services critiques. |
-| **Semaine 7** | Terminé      | Segmentation du réseau et clarification des zones de confiance. Amélioration du contrôle et de la sécurité. |
-| **Semaine 7.5** | Terminé    | Mise en place d’un accès administratif contrôlé. Séparation claire entre usages standards et actions privilégiées. |
-| **Semaine 8** | Terminé      | Ouverture contrôlée de l’environnement vers l’extérieur. Responsabilité accrue sur les accès distants. |
-| **Semaine 8.0.5** | Terminé  | Standardisation des environnements applicatifs. Réduction du risque lié aux configurations hétérogènes. |
-| **Semaine 8.0.6** | Terminé  | Centralisation de la gestion des services applicatifs. Amélioration de la gouvernance et de la visibilité globale. |
-| **Semaine 8.1** | Terminé    | Formalisation de l’inventaire et des standards. Passage à une gestion structurée des actifs. |
-| **Semaine 8.1.1** | Terminé  | Validation des mécanismes de reprise et de continuité. Transition d’une résilience supposée à une résilience testée. |
-| **Semaine 8.2** | Terminé    | Ajout d’un service transverse partagé. Introduction de dépendances communes entre les systèmes. |
-| **Semaine 8.3** | Terminé    | Centralisation de l’accès aux services internes. Simplification de l’exposition tout en renforçant la sécurité. |
-| **Semaine 8.4** | Terminé    | Mise en place d’une gestion centralisée des secrets. Renforcement de la discipline de sécurité. |
-| **Semaine 8.5** | Terminé    | Application de contrôles forts sur les accès critiques. Augmentation volontaire de la friction sur les zones à risque. |
-| **Semaine 9** | Terminé      | Centralisation des journaux et visibilité réseau. Passage à une posture d’observation active. |
-| **Semaine 10** | Terminé     | Introduction d’une évaluation régulière de l’exposition aux risques. Début d’une démarche proactive. |
-| **Semaine 10.5** | En cours   | Initialisation d’une gestion de configuration versionnée. Préparation à l’automatisation et à la répétabilité. |
-| **Semaine 10.75** | Prévu     | Introduction de la gestion du cycle de vie des postes. Ajout de gouvernance côté utilisateurs. |
-| **Semaine 11** | Prévu       | Automatisation et gestion de configuration. Réduction de la dépendance aux actions manuelles. |
-| **Semaine 12** | Prévu       | Extension de la supervision au-delà des événements. Ajout de signaux de performance et de disponibilité. |
-| **Semaine 13** | Prévu       | Mise en place de la haute disponibilité pour les services clés. Formalisation des attentes de continuité. |
-| **Semaine 14** | Prévu       | Validation avancée des scénarios de reprise. Test de la continuité au-delà du stockage. |
-| **Semaine 15** | Prévu       | Consolidation finale et nettoyage documentaire. Transformation du lab en ensemble cohérent et présentable. |
-
+| Semaine | Statut | Technologies et réalisations |
+|---------|--------|------------------------------|
+| Semaine 1 | Terminé | Déploiement de l'infrastructure Proxmox VE (3 nœuds), configuration réseau de base avec pfSense-HQ, mise en place des ponts réseau et routage initial. |
+| Semaine 2 | Terminé | Installation de Active Directory Domain Services (DC1) sur Windows Server 2022, configuration DNS intégrée, déploiement DHCP avec mises à jour DNS sécurisées. |
+| Semaine 3 | Terminé | Déploiement du serveur de fichiers FS1 (Windows Server 2022) avec partages SMB3, intégration Active Directory et gestion des ACLs. |
+| Semaine 4 | Terminé | Mise en place de Wazuh (SIEM) pour la supervision de sécurité, déploiement de Proxmox Backup Server et TrueNAS pour la stratégie de sauvegarde multi-niveaux. |
+| Semaine 5 | Terminé | Création du site Branch avec DC2 (réplique AD), pfSense-Branch, établissement du tunnel WireGuard site-to-site avec ACLs renforcées. |
+| Semaine 6 | Terminé | Configuration de la réplication Active Directory entre DC1 et DC2, définition des sites AD (HQ-Site, Branch-Site), validation de la continuité des services d'identité. |
+| Semaine 7 | Terminé | Segmentation réseau avec VLANs (20-Servers, 30-Clients, 40-Guest), configuration des règles de routage et filtrage sur pfSense. |
+| Semaine 7.5 | Terminé | Déploiement de Jump-HQ (Windows Server 2022) comme bastion RDP, restriction d'accès aux administrateurs IT uniquement. |
+| Semaine 8 | Terminé | Configuration d'OpenVPN (full-tunnel) pour l'accès distant, routage VPN vers le réseau HQ, tests de connectivité inter-sites. |
+| Semaine 8.0.5 | Terminé | Standardisation avec Docker et déploiement de Portainer pour la gestion centralisée des conteneurs. |
+| Semaine 8.0.6 | Terminé | Consolidation de Portainer avec agents sur tous les LXC Docker, centralisation de la gestion des services conteneurisés. |
+| Semaine 8.1 | Terminé | Déploiement de NetBox (IPAM/DCIM) comme source de vérité, documentation de l'inventaire réseau et des actifs. |
+| Semaine 8.1.1 | Terminé | Tests de restauration avec Proxmox Backup Server, validation des réplications TrueNAS, vérification de la stratégie de sauvegarde 3-2-1. |
+| Semaine 8.2 | Terminé | Installation de Mailcow (serveur de messagerie) avec intégration LDAP vers Active Directory, configuration SOGo pour le webmail. |
+| Semaine 8.3 | Terminé | Déploiement de Nginx Proxy Manager comme reverse proxy central, configuration HTTPS avec certificats wildcard AD CS (*.corp.local). |
+| Semaine 8.4 | Terminé | Installation de Bitwarden (auto-hébergé) pour la gestion centralisée des mots de passe, intégration SMTP avec Mailcow. |
+| Semaine 8.5 | Terminé | Configuration de NPS1 (RADIUS) avec segmentation dual-IP, intégration Duo Security (MFA) pour pfSense, OpenVPN et RDP via Duo Windows Logon. |
+| Semaine 9 | Terminé | Déploiement de Graylog pour l'agrégation centralisée des logs (Syslog, NXLog, rsyslog), installation de Zeek pour le monitoring réseau passif avec miroitage de trafic. |
+| Semaine 10 | Terminé | Installation de Nessus Essentials Plus pour les scans de vulnérabilités, configuration des scans avec et sans credentials sur les cibles approuvées. |
+| Semaine 10.5 | En cours | Initialisation de la gestion de configuration versionnée (Git), préparation des playbooks d'automatisation. |
+| Semaine 10.75 | Prévu | Mise en place de la gestion du cycle de vie des postes de travail, déploiement de politiques de groupe avancées. |
+| Semaine 11 | Prévu | Automatisation avec Ansible, création de playbooks pour la configuration et le déploiement des services. |
+| Semaine 12 | Prévu | Extension de la supervision avec métriques de performance, intégration de monitoring de disponibilité et alertes. |
+| Semaine 13 | Prévu | Mise en place de la haute disponibilité pour les services critiques, configuration de basculement automatique. |
+| Semaine 14 | Prévu | Tests avancés de reprise après sinistre, validation des procédures de continuité d'activité. |
+| Semaine 15 | Prévu | Consolidation finale de la documentation, optimisation de l'architecture et préparation de la présentation du lab. |
 ---
 
 ## Inventaire du lab
