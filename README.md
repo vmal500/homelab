@@ -977,13 +977,14 @@ Chaque étape réfère aux composantes décrites dans :
 | Semaine 8.5 | Terminé | Configuration de NPS1 (RADIUS) avec segmentation dual-IP, intégration Duo Security (MFA) pour pfSense, OpenVPN et RDP via Duo Windows Logon. |
 | Semaine 9 | Terminé | Déploiement de Graylog pour l'agrégation centralisée des logs (Syslog, NXLog, rsyslog), installation de Zeek pour le monitoring réseau passif avec miroitage de trafic. |
 | Semaine 10 | Terminé | Installation de Nessus Essentials Plus pour les scans de vulnérabilités, configuration des scans avec et sans credentials sur les cibles approuvées. |
-| Semaine 10.5 | En cours | Initialisation de la gestion de configuration versionnée (Git), préparation des playbooks d'automatisation. |
-| Semaine 10.75 | Prévu | Mise en place de la gestion du cycle de vie des postes de travail, déploiement de politiques de groupe avancées. |
+| Semaine 10.5 | Terminé | Initialisation de la gestion de configuration versionnée (Git), préparation des playbooks d'automatisation. |
+| Semaine 10.75 | En cours | Mise en place de la gestion du cycle de vie des postes de travail, déploiement de politiques de groupe avancées. |
 | Semaine 11 | Prévu | Automatisation avec Ansible, création de playbooks pour la configuration et le déploiement des services. |
 | Semaine 12 | Prévu | Extension de la supervision avec métriques de performance, intégration de monitoring de disponibilité et alertes. |
 | Semaine 13 | Prévu | Mise en place de la haute disponibilité pour les services critiques, configuration de basculement automatique. |
 | Semaine 14 | Prévu | Tests avancés de reprise après sinistre, validation des procédures de continuité d'activité. |
 | Semaine 15 | Prévu | Consolidation finale de la documentation, optimisation de l'architecture et préparation de la présentation du lab. |
+
 ---
 
 ## Inventaire du lab
